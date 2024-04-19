@@ -26,7 +26,7 @@
                     <mxGeometry y="176" width="210" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="イベントテーブル（Events）" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="390" y="40" width="200" height="266" as="geometry"/>
+                    <mxGeometry x="440" y="30" width="200" height="326" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="event_id（イベントID）: PK" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="11" vertex="1">
                     <mxGeometry y="26" width="200" height="30" as="geometry"/>
@@ -43,14 +43,20 @@
                 <mxCell id="16" value="occurred_on（発生日）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;labelBorderColor=none;" parent="11" vertex="1">
                     <mxGeometry y="146" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="cause（原因）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;labelBorderColor=none;" parent="11" vertex="1">
+                <mxCell id="17" value="location（場所）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;labelBorderColor=none;" parent="11" vertex="1">
                     <mxGeometry y="176" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="resolution（解決策）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;labelBorderColor=none;" parent="11" vertex="1">
+                <mxCell id="36" value="cause_type（原因の種類）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="11">
                     <mxGeometry y="206" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="prevention（予防策）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="11" vertex="1">
+                <mxCell id="37" value="detailed_cause（具体的な原因）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="11">
                     <mxGeometry y="236" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="resolution（解決策）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;labelBorderColor=none;" parent="11" vertex="1">
+                    <mxGeometry y="266" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="prevention（予防策）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="11" vertex="1">
+                    <mxGeometry y="296" width="200" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="コメントテーブル（Comments）" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="90" y="350" width="210" height="146" as="geometry"/>
@@ -67,25 +73,25 @@
                 <mxCell id="25" value="content（内容）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="21" vertex="1">
                     <mxGeometry y="116" width="210" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="サポートチケットテーブル（SupportTickets）" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
-                    <mxGeometry x="390" y="350" width="300" height="206" as="geometry"/>
+                <mxCell id="29" value="サポートチケットテーブル（SupportTickets）" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="379" width="300" height="206" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="ticket_id（チケットID）: PK" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="29">
+                <mxCell id="30" value="ticket_id（チケットID）: PK" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="29" vertex="1">
                     <mxGeometry y="26" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" value="event_id（イベントID）: FK" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="29">
+                <mxCell id="31" value="event_id（イベントID）: FK" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="29" vertex="1">
                     <mxGeometry y="56" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="32" value="detailed_description（詳細説明）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="29">
+                <mxCell id="32" value="detailed_description（詳細説明）" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="29" vertex="1">
                     <mxGeometry y="86" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="analysis（分析）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="29">
+                <mxCell id="33" value="analysis（分析）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="29" vertex="1">
                     <mxGeometry y="116" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" value="corrective_action（是正措置）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="29">
+                <mxCell id="34" value="corrective_action（是正措置）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="29" vertex="1">
                     <mxGeometry y="146" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" value="prevention_plan（予防計画）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;" vertex="1" parent="29">
+                <mxCell id="35" value="prevention_plan（予防計画）" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;glass=1;" parent="29" vertex="1">
                     <mxGeometry y="176" width="300" height="30" as="geometry"/>
                 </mxCell>
             </root>
