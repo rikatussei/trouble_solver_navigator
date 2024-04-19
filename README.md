@@ -6,20 +6,28 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+Rubyのバージョン
 
 * System dependencies
+システム依存関係
 
 * Configuration
+設定
 
 * Database creation
+データベースの作成
 
 * Database initialization
+データベースの初期化
 
 * How to run the test suite
+テストスイートの実行方法
 
 * Services (job queues, cache servers, search engines, etc.)
+サービス（ジョブキュー、キャッシュサーバー、検索エンジンなど）
 
 * Deployment instructions
+デプロイメントの指示
 
 * ...
 
