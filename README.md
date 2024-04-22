@@ -61,7 +61,6 @@ Rubyのバージョン
 | cause_type_id       | integer   | null: false                    |
 | detailed_cause      | string    |                                |
 | resolution          | text      |                                |
-| prevention          | text      |                                |
 | user                | references| null: false, foreign_key: true |
 
 ### Association
@@ -76,11 +75,8 @@ Rubyのバージョン
 
 | Column               | Type             | Options                        |
 | -------------------- | ---------------- | ------------------------------ |
-| detailed_description | text             |                                |
 | analysis             | text             |                                |
-| corrective_action    | text             |                                |
 | prevention_plan      | text             |                                |
-| ticket               | references       | null: false, foreign_key: true |
 | event                | references       | null: false, foreign_key: true |
 
 ### Association
