@@ -1,2 +1,18 @@
-<h1>ようこそTroubleSolver Navigatorへ！</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
+      </div>
+      <div class="card__wrapper">
+      <%= render partial: 'event', collection: @event %>
+      </div>
+    <% else %>
+      <div>ようこそTroubleSolver Navigatorへ！</div>
+    <% end %>
+    <div class="card__wrapper">
+      <%= render partial: 'event', collection: @event %>
+    </div>
+  </div>
+</main>

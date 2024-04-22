@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.integer :cause_type_id, null: false
       t.string :detailed_cause
       t.text :resolution
-      t.text :prevention
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end

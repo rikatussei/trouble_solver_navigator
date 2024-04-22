@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_19_084202) do
     t.integer "cause_type_id", null: false
     t.string "detailed_cause"
     t.text "resolution"
-    t.text "prevention"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
