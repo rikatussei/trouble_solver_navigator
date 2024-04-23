@@ -19,7 +19,7 @@
         <label class="form-text">ニックネーム</label>
         <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+        <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 鈴木 太郎", maxlength:"40" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
@@ -49,25 +49,30 @@
         <span class="indispensable">必須</span>
         </div>
         <div class='input-name-wrap'>
-        <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 山田" %>
-        <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 陸太郎" %>
+        <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 鈴木" %>
+        <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 太郎" %>
         </div>
+      </div>
+      <div class="form-group">
         <div class='form-text-wrap'>
         <label class="form-text">所属</label>
         <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :affiliation, class:"input-affiliation", id:"affiliation", placeholder:"例) 技術部" %>
-        <div class="form-group">
-        <h2 class='form-bottom-text'>
-        「ユーザー登録」のボタンを押すことにより、TroubleSolver Navigatorを利用できるようになります。
-        </h2>
-        </div>
-        <div class='register-btn'>
-        <%= f.submit "ユーザー登録" ,class:"register-lightgreen-btn" %>
-        </div>
+      </div>      
+      <div class="form-group">
+      <h2 class='form-bottom-text'>
+      必要事項の入力後に「ユーザー登録」のボタンを押すことにより、TroubleSolver Navigatorを利用できるようになります。
+      </h2>
       </div>
-    <% end %>
+      <div class='register-btn'>
+      <%= f.submit "ユーザー登録" ,class:"register-lightgreen-btn" %>
+      </div>
+      <div class="register-btn">
+      <%= link_to "トップページに戻る", root_path, class:"nav-back-btn" %>
+      </div>
     </div>
+    <% end %>
   </div>  
 </div>    
 <%= render "shared/footer" %>

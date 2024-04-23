@@ -178,6 +178,21 @@ a {
   margin:  20px 20px 20px 20px;
 }
 
+.nav-back-btn {
+  width: 94%;
+  background: #100881;
+  border: 1px solid #2d2dea;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 20px 20px 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
 .register-info {
   margin: 30px 180px 0 0;
   color: #0099e8;
