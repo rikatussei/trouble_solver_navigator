@@ -8,20 +8,22 @@ a {
 
 .page-heading {
   font-size: 40px;
-  margin: 20px 0; 
+  margin: 20px 20px 20px 20px; 
 }
 
+/* 追加要必要性の確認 */
 .registration-main {
   width: 100%;
   min-width: 800px;
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
 }
 
+/* form-wrapは他の画面でも使用しています */
 .form-wrap {
-  width: 50%;
+  width: 90%;
   background-color: white;
   padding-bottom: 70px;
 }
@@ -94,7 +96,7 @@ a {
 }
 
 .input-name {
-  width: 180px;
+  width: 190px;
   margin: 5px 20px 20px 20px;
   height: 48px;
   line-height: 30px;
