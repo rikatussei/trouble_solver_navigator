@@ -1,0 +1,55 @@
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .greeting__text__main {
+    font-size: 35px; /* タブレットでのフォントサイズを調整 */
+  }
+  .greeting__text__sub {
+    font-size: 25px; /* タブレットでのフォントサイズを調整 */
+  }
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .prototype_image{
+    width: 60%;
+  }
+}
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .greeting__text__main {
+    font-size: 28px; /* スマホでのフォントサイズを調整 */
+  }
+  .greeting__text__sub {
+    font-size: 20px; /* スマホでのフォントサイズを調整 */
+  }
+  .logo {
+    width: 120px;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+  .prototype_image{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
+  }
+}
