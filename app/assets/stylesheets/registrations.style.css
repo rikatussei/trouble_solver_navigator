@@ -146,7 +146,6 @@ a {
   display: contents;
 }
 
-
 .form-bottom-text {
   font-size: 15px;
   margin-top: 10px;
@@ -168,14 +167,15 @@ a {
   margin: 0 auto;
 }
 
-.register-red-btn {
+.register-lightgreen-btn {
   width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: #07c2f1;
+  border: 1px solid #2de7ea;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  margin:  20px 20px 20px 20px;
 }
 
 .register-info {

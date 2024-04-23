@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<%= render "shared/second-header"%>
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
@@ -57,6 +57,14 @@
         <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :affiliation, class:"input-affiliation", id:"affiliation", placeholder:"例) 技術部" %>
+        <div class="form-group">
+        <h2 class='form-bottom-text'>
+        「ユーザー登録」のボタンを押すことにより、TroubleSolver Navigatorを利用できるようになります。
+        </h2>
+        </div>
+        <div class='register-btn'>
+        <%= f.submit "ユーザー登録" ,class:"register-lightgreen-btn" %>
+        </div>
       </div>
     <% end %>
     </div>
