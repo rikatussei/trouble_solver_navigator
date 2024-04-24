@@ -39,39 +39,40 @@
     </div>
 
     <div class="items-detail">
-      <div class="weight-bold-text">イベントの発生日</div>
       <div class="form">
         <div class="weight-bold-text">
-          <span class="indispensable">必須</span>
+        イベントの発生日
+        <span class="indispensable">必須</span>        
         </div>
-    <%= f.date_field :occurred_on, class: "items-text", id: "item-info", placeholder: "イベントの日付を入力してください" %>
+        <%= f.date_field :occurred_on, class: "items-text", id: "item-info", placeholder: "イベントの日付を入力してください" %>
         <div class="weight-bold-text">
-          イベントの発生した場所
-          <span class="indispensable">必須</span>
+        イベントの発生した場所
+        <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :location, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
     </div>
+
     <div class="items-detail">
-      <div class="weight-bold-text">イベントの詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          イベントの種類や原因
-          <span class="indispensable">必須</span>
+        イベントの種類や原因
+        <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:cause_type_id, CauseType.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
-          イベントについて具体的に説明してください。
-          <span class="indispensable">任意</span>
+        イベントについて具体的に説明してください。
+        <span class="indispensable">任意</span>
         </div>
         <%= f.text_area :detailed_cause, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
         <div class="weight-bold-text">
-          どのような対応をしましたか？
-          <span class="indispensable">任意</span>
+        どのような対応をしましたか？
+        <span class="indispensable">任意</span>
         </div>
         <%= f.text_area :resolution, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    </div>
+
     <div class="sell-btn-contents">
       <%= f.submit "イベントを投稿する" ,class:"sell-btn" %>
       <%=link_to 'トップページに戻る', root_path, class:"back-btn" %>
