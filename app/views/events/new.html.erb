@@ -1,9 +1,6 @@
 <%= render "shared/third-header"%>
 
 <div class="items-sell-contents">
-  <header class="items-sell-header">
-
-  </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">発生したトラブル「イベント」の情報を入力して下さい。</h2>
     <%= form_with model: @event, url:events_path ,local: true do |f| %>
@@ -42,7 +39,7 @@
       <div class="form">
         <div class="weight-bold-text">
         イベントの発生日
-        <span class="indispensable">必須</span>        
+        <span class="indispensable">必須</span>
         </div>
         <%= f.date_field :occurred_on, class: "items-text", id: "item-info", placeholder: "イベントの発生日を入力してください" %>
         <div class="weight-bold-text">
