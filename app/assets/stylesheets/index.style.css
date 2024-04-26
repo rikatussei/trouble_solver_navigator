@@ -57,7 +57,7 @@
 }
 
 .card__wrapper {
-  top: 70%; /* イベント情報の位置を調整 */
+  top: 80%; /* イベント情報の位置を調整 */
   transform: translate(-50%, -50%);
 }
 

@@ -40,6 +40,16 @@
   font-weight: bold;
 }
 
+.indispensable2 {
+  background: #502dea;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .weight-bold-text {
   font-weight: bold;
   min-width: 170px;
@@ -119,7 +129,7 @@
 }
 
 .items-detail>.form {
-  width: 300px;
+  width: 100%;
   padding: 2vh 0;
 }
 
@@ -198,6 +208,22 @@
   padding: 15px 35%;
   text-decoration: none;
 }
+
+.nav-back-btn2 {
+  width: 91%;
+  background: #100881;
+  border: 1px solid #2d2dea;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 20px 20px 20px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
 
 /* /下部ボタン */
 

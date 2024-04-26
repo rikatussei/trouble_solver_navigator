@@ -1,10 +1,10 @@
 <div class="card">
-  <%= link_to image_tag(event.image, class: :card__img ), event_path(event) %>
+  <%= link_to image_tag(event.images, class: :card__img ), event_path(event) %>
   <div class="card__body">
     <%= link_to event.title, event_path(event), class: :card__title%>
     <p class="card__summary">
       <%= event.description %>
     </p>
-    <%= link_to "by #{event.user.name}", user_path(event.user), class: :card__user %>
+    <%= link_to "by #{event.user.nickname}", user_path(event.user), class: :card__user %>
   </div>
 </div>
