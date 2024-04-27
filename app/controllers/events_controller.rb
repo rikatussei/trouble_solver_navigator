@@ -17,6 +17,15 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find_by(id: params[:id])
+    if @event.nil?
+      redirect_to root_path, alert: 'Event not found.'
+    end
+    # @comment = Comment.new
+    # @comments = @event.comments
+  end
+
   private
 
   def event_params
