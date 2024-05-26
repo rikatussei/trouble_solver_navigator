@@ -17,7 +17,7 @@
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .event_image{
     width: 60%;
   }
 }
@@ -46,7 +46,7 @@
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .event_image{
     width: 100%;
   }
   .table{
