@@ -1,34 +1,34 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="event__wrapper">
+      <p class="event__hedding">
         <%= @event.title %>
       </p>
-      <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :prototype__user %>
+      <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :event__user %>
       <% if current_user == @event.user%>
         <div class="prototype__manage">
-          <%= link_to "編集する", edit_event_path(@event), class: :prototype__btn %>
-          <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :prototype__btn %>
+          <%= link_to "編集する", edit_event_path(@event), class: :event__btn %>
+          <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :event__btn %>
         </div>
       <% end %>
-      <div class="prototype__image">
+      <div class="event__image">
         <%= image_tag @event.images %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+      <div class="event__body">
+        <div class="event__detail">
           <p class="detail__title">タイトル</p>
           <p class="detail__message">
             <%= @event.title %>
           </p>
         </div>
-        <div class="prototype__detail">
+        <div class="event__detail">
           <p class="detail__title">説明</p>
-          <p class="detail__message">
+          <p class="event__message">
             <%= @event.description %>
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      <div class="event__comments">
         <% if user_signed_in? %>
           <%= form_with model: [@event, @comment], local: true do |f|%>
             <div class="field">
