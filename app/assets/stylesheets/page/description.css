@@ -22,15 +22,15 @@
   /* overflow: hidden; はみ出た部分を隠す */
 }
 
-.greeting-image {
+/* .description-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% center;
   opacity: 0.8; /* 画像の透明度を調整し、テキストが読みやすくなるように */
-}
+} */
 
-.greeting, .greeting__text__main, .greeting__text__sub, .card__wrapper {
+.description, .description__text__main, .description__text__sub, .card__wrapper {
   position: absolute;
   top: 50%; /* 画像の中央に位置 */
   left: 50%; /* 画像の中央に位置 */
@@ -45,18 +45,18 @@
   top: 10%; /* 適切な位置に調整 */
 }
 
-.greeting__text__main, .greeting__text__sub {
+.description__text__main, .description__text__sub {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* テキストの可読性を向上させるための影を追加 */
   font-size: 30px;
 }
 
-.greeting__text__main {
+.description__text__main {
   font-size: 50px;
   margin-bottom: 10px;
   top: 10%;
 }
 
-.greeting__text__sub {
+.description__text__sub {
   font-size: 30px;
   top: 20%;
 }
@@ -89,9 +89,6 @@
     width: 48%;
     margin-bottom: 40px;
   }
-  /* .prototype_image{
-    width: 60%;
-  } */
 }
 
  /* スマホ表示 */
@@ -118,9 +115,6 @@
   .card__summary {
     font-size: 14px;
   }
-  /* .prototype_image{
-    width: 100%;
-  } */
   .table{
     width: 100%;
   }
