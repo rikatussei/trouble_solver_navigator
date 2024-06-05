@@ -28,13 +28,9 @@
   object-fit: cover;
   object-position: 50% center;
   opacity: 0.8; /* 画像の透明度を調整し、テキストが読みやすくなるように */
-} */
+/* } */ 
 
 .description, .description__text__main, .description__text__sub, .card__wrapper {
-  position: absolute;
-  top: 50%; /* 画像の中央に位置 */
-  left: 50%; /* 画像の中央に位置 */
-  transform: translate(-50%, -50%); /* 正確に中央に配置する */
   width: 100%; /* コンテナの幅に合わせる */
   text-align: center; /* テキストを中央揃えに */
   color: black;
