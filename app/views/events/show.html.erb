@@ -29,25 +29,25 @@
         </div>
       </div>
       <div class="event__comments">
-        <% if user_signed_in? %>
-          <%= form_with model: [@event, @comment], local: true do |f| %>
-            <div class="field">
+        <%# <% if user_signed_in? %>
+          <%# <%= form_with model: [@event, @comment], local: true do |f| %>
+            <%# <div class="field">
               <%= f.label :content, "コメント" %><br />
-              <%= f.text_field :content, id:"comment_content" %>
-            </div>
+              <%# <%= f.text_field :content, id:"comment_content" %>
+            <%# </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end %>
-        <% end %>
-        <ul class="comments_lists">
+            <%# </div> %>
+          <%# <% end %>
+        <%# <% end %>
+        <%# <ul class="comments_lists">
           <% @comments.each do |comment| %>
-            <li class="comments_list">
+            <%# <li class="comments_list">
               <%= comment.content%>
-              <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
-            </li>
-          <% end %>
-        </ul>
+              <%# <%= link_to "（#{comment.user.name}）", user_path(comment.user), class: :comment_user %>
+            <%# </li> %>
+          <%# <% end %> 
+        <%# </ul> %> 
       </div>
     </div>
   </div>
