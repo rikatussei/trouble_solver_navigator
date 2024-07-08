@@ -1,37 +1,68 @@
-<%= form_with model: event, local: true do |f| %>
-  <div class="field">
-    <%= f.label :title, "タイトル" %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description, "イベントの説明" %><br />
-    <%= f.text_area :description, class: :form__text %>
-  </div>
-  <div class="field">
-    <%= f.label :occurred_on, "イベントの発生日" %><br />
-    <%= f.text_area :occurred_on, class: :form__text %>
-  </div>
-  <div class="field">
-    <%= f.label :images, "イベントの画像" %><br />
-    <%= f.file_field :images %>
-  </div>
-  <div class="field">
-    <%= f.label :location, "イベントの発生した場所" %><br />
-    <%= f.text_area :location, class: :form__text %>
-  </div>
-  <div class="field">
-    <%= f.label :cause_type_id, "イベントの種類や原因" %><br />
-    <%= f.text_area :cause_type_id, class: :form__text %>
-  </div>
-  <div class="field">
-    <%= f.label :detailed_cause, "イベントについて具体的に説明してください" %><br />
-    <%= f.text_area :detailed_cause, class: :form__text %>
-  </div>
-  <div class="field">
-    <%= f.label :resolution, "どのような対応をしましたか？" %><br />
-    <%= f.text_area :resolution, class: :form__text %>
-  </div>
-  <div class="actions">
-    <%= f.submit "保存する", class: :form__btn %>
-  </div>
-<% end %>
+      <%= form_with model: event, local: true do |f| %>
+        <div class="img-upload">
+          <div class="weight-bold-text">
+            状況を説明する画像
+            <span class="indispensable">必須</span>
+          </div>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :images, id:"item-image" %>
+          </div>
+        </div>
+
+        <div class="new-items">
+          <div class="weight-bold-text">
+            タイトル
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"イベントの名称", maxlength:"40" %>
+          <div class="items-explain">
+            <div class="weight-bold-text">
+              イベントの説明
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"何が起きましたか？", rows:"7", maxlength:"1000" %>
+          </div>
+        </div>
+
+        <div class="items-detail">
+          <div class="form">
+            <div class="weight-bold-text">
+              イベントの発生日
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.date_field :occurred_on, class: "items-text", id: "item-info", placeholder: "イベントの発生日を入力してください" %>
+            <div class="weight-bold-text">
+              イベントの発生した場所
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :location, class:"items-text", id:"item-info", placeholder:"どこで発生したイベントですか？", rows:"7", maxlength:"1000" %>
+          </div>
+        </div>
+
+        <div class="items-detail">
+          <div class="form">
+            <div class="weight-bold-text">
+              イベントの種類や原因
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:cause_type_id, CauseType.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+            <div class="weight-bold-text">
+              イベントについて具体的に説明してください
+              <span class="indispensable">任意</span>
+            </div>
+            <%= f.text_area :detailed_cause, class:"items-text", id:"item-info", placeholder:"イベントについて具体的な説明をお願いします。", rows:"7", maxlength:"1000" %>
+            <div class="weight-bold-text">
+              どのような対応をしましたか？
+              <span class="indispensable2">任意</span>
+            </div>
+            <%= f.text_area :resolution, class:"items-text", id:"item-info", placeholder:"イベントに対してどのような行動をしましたか？", rows:"7", maxlength:"1000" %>
+          </div>
+        </div>
+        
+        <div class="actions">
+          <%= f.submit "保存する", class: :form__btn %>
+        </div>
+      <% end %>
