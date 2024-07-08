@@ -26,6 +26,17 @@ class EventsController < ApplicationController
     # @comments = @event.comments
   end
 
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def event_params
