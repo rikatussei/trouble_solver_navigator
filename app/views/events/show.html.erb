@@ -2,11 +2,11 @@
 <main class="main">
   <div class="inner">
     <div class="event__wrapper">
-      <p class="event__hedding">
+      <p class="event__heading">
         <%= @event.title %>
       </p>
       <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :event__user %>
-      <% if current_user == @event.user%>
+      <% if current_user == @event.user %>
         <div class="event__manage">
           <%= link_to "編集する", edit_event_path(@event), class: :event__btn %>
           <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :event__btn %>
@@ -28,9 +28,39 @@
             <%= @event.description %>
           </p>
         </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントの発生日</p>
+          <p class="event__message">
+            <%= @event.occurred_on %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントの発生した場所</p>
+          <p class="event__message">
+            <%= @event.location %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントの種類や原因</p>
+          <p class="event__message">
+            <%= @event.cause_type.name %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントについて具体的に説明してください</p>
+          <p class="event__message">
+            <%= @event.detailed_cause %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">どのような対応をしましたか？</p>
+          <p class="event__message">
+            <%= @event.resolution %>
+          </p>
+        </div>
       </div>
       <div class="register-btn">
-      <%= link_to "トップページに戻る", root_path, class:"nav-back-btn" %>
+        <%= link_to "トップページに戻る", root_path, class: "nav-back-btn" %>
       </div>
       <div class="event__comments">
         <%# <% if user_signed_in? %>
