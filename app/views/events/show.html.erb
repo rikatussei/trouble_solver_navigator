@@ -29,6 +29,9 @@
           </p>
         </div>
       </div>
+      <div class="register-btn">
+      <%= link_to "トップページに戻る", root_path, class:"nav-back-btn" %>
+      </div>
       <div class="event__comments">
         <%# <% if user_signed_in? %>
           <%# <%= form_with model: [@event, @comment], local: true do |f| %>
@@ -53,4 +56,6 @@
     </div>
   </div>
 </main>
-<%= render "shared/footer" %>
+
+
+<%= render "shared/second-footer"%>
