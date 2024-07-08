@@ -39,11 +39,13 @@ class EventsController < ApplicationController
     end
   end
 
+
   def destroy
+    @event = Event.find(params[:id])
     if @event.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: 'イベントが削除されました。'
     else
-      redirect_to root_path
+      redirect_to root_path, alert: 'イベントの削除に失敗しました。'
     end
   end
 
