@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'イベントが作成されました。'
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,11 +27,13 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
 
   def update
+    @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to event_path(@event)
+      redirect_to event_path(@event), notice: 'イベントが更新されました。'
     else
       render :edit, status: :unprocessable_entity
     end
