@@ -7,7 +7,7 @@
       </p>
       <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :event__user %>
       <% if current_user == @event.user%>
-        <div class="prototype__manage">
+        <div class="event__manage">
           <%= link_to "編集する", edit_event_path(@event), class: :event__btn %>
           <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :event__btn %>
         </div>
