@@ -1,45 +1,37 @@
-<%= form_with model: event, local: true do |f|%>
+<%= form_with model: event, local: true do |f| %>
   <div class="field">
     <%= f.label :title, "タイトル" %><br />
     <%= f.text_field :title %>
   </div>
-
   <div class="field">
     <%= f.label :description, "イベントの説明" %><br />
     <%= f.text_area :description, class: :form__text %>
   </div>
-
   <div class="field">
-    <%= f.label :occurred_on "イベントの発生日" %><br />
+    <%= f.label :occurred_on, "イベントの発生日" %><br />
     <%= f.text_area :occurred_on, class: :form__text %>
   </div>
-
   <div class="field">
     <%= f.label :images, "イベントの画像" %><br />
     <%= f.file_field :images %>
   </div>
-
   <div class="field">
-    <%= f.label :location "イベントの発生した場所" %><br />
+    <%= f.label :location, "イベントの発生した場所" %><br />
     <%= f.text_area :location, class: :form__text %>
   </div>
-
   <div class="field">
-    <%= f.label :cause_type_id "イベントの種類や原因" %><br />
+    <%= f.label :cause_type_id, "イベントの種類や原因" %><br />
     <%= f.text_area :cause_type_id, class: :form__text %>
   </div>
-
   <div class="field">
-    <%= f.label :detailed_cause "イベントについて具体的に説明してください" %><br />
+    <%= f.label :detailed_cause, "イベントについて具体的に説明してください" %><br />
     <%= f.text_area :detailed_cause, class: :form__text %>
   </div>
-
   <div class="field">
-    <%= f.label :resolution "どのような対応をしましたか？" %><br />
+    <%= f.label :resolution, "どのような対応をしましたか？" %><br />
     <%= f.text_area :resolution, class: :form__text %>
   </div>
-
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "保存する", class: :form__btn %>
   </div>
 <% end %>
