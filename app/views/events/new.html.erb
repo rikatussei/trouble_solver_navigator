@@ -58,7 +58,7 @@
         </div>
         <%= f.collection_select(:cause_type_id, CauseType.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
-        イベントについて具体的に説明してください。
+        イベントについて具体的に説明してください
         <span class="indispensable">任意</span>
         </div>
         <%= f.text_area :detailed_cause, class:"items-text", id:"item-info", placeholder:"イベントについて具体的な説明をお願いします。" ,rows:"7" ,maxlength:"1000" %>
