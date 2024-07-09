@@ -22,8 +22,8 @@ class EventsController < ApplicationController
     if @event.nil?
       redirect_to root_path, alert: 'Event not found.'
     end
-    # @comment = Comment.new
-    # @comments = @event.comments
+    @comment = Comment.new
+    @comments = @event.comments
   end
 
   def edit

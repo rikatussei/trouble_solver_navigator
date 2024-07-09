@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    # @comment = Comment.new(comment_params)
-    # if @comment.save
-    #   redirect_to event_path(@comment.event)
-    # else
-    #   @event = @comment.event
-    #   @comments = @event.comments
-    #   render "events/show"
-    # end
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to event_path(@comment.event)
+    else
+      @event = @comment.event
+      @comments = @event.comments
+      render "events/show"
+    end
   end
 
   private
