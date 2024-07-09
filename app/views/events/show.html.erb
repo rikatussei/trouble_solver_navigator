@@ -2,9 +2,9 @@
 <main class="main">
   <div class="inner">
     <div class="event__wrapper">
-      <p class="event__heading">
+      <%# <p class="event__heading">
         <%= @event.title %>
-      </p>
+      <%# </p> %> 
       <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :event__user %>
       <% if current_user == @event.user %>
         <div class="event__manage">
