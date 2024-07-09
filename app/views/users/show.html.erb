@@ -1,14 +1,15 @@
-<div class="main">
+<%= render "shared/second-header" %>
+<main class="main">
   <div class="inner">
-    <div class="user__wrapper">
+    <div class="event__wrapper">
       <h2 class="page-heading">
-        <%= "#{@user.name}さんの情報"%>
+        <%= "#{@user.nickname}さんの情報"%>
       </h2>
       <table class="table">
         <tbody>
           <tr>
             <th class="table__col1">名前</th>
-            <td class="table__col2"><%= @user.name %></td>
+            <td class="table__col2"><%= @user.nickname %></td>
           </tr>
           <tr>
             <th class="table__col1">プロフィール</th>
@@ -25,11 +26,91 @@
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "#{@user.name}さんのプロトタイプ"%>
+        <%= "#{@user.nickname}さんのイベント"%>
       </h2>
       <div class="user__card">
-        <%= render partial: 'prototypes/prototype', collection: @user.prototypes %>
+        <%= render partial: 'eventss/event', collection: @user.events %>
+      </div>
+
+      <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :event__user %>
+      <% if current_user == @event.user %>
+        <div class="event__manage">
+          <%= link_to "編集する", edit_event_path(@event), class: :event__btn %>
+          <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :event__btn %>
+        </div>
+      <% end %>
+      <div class="event__image">
+        <%= image_tag @event.images %>
+      </div>
+      <div class="event__body">
+        <div class="event__detail">
+          <p class="detail__title">タイトル</p>
+          <p class="detail__message">
+            <%= @event.title %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">説明</p>
+          <p class="event__message">
+            <%= @event.description %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントの発生日</p>
+          <p class="event__message">
+            <%= @event.occurred_on %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントの発生した場所</p>
+          <p class="event__message">
+            <%= @event.location %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントの種類や原因</p>
+          <p class="event__message">
+            <%= @event.cause_type.name %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">イベントについて具体的に説明してください</p>
+          <p class="event__message">
+            <%= @event.detailed_cause %>
+          </p>
+        </div>
+        <div class="event__detail">
+          <p class="detail__title">どのような対応をしましたか？</p>
+          <p class="event__message">
+            <%= @event.resolution %>
+          </p>
+        </div>
+      </div>
+      <div class="register-btn">
+        <%= link_to "トップページに戻る", root_path, class: "nav-back-btn" %>
+      </div>
+      <div class="event__comments">
+        <% if user_signed_in? %>
+          <%= form_with model: [@event, @comment], url: event_comments_path(@event), local: true do |f| %>
+            <div class="field">
+              <%= f.label :content, "コメント" %><br />
+              <%= f.text_field :content, id: "comment_content" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn %>
+            </div>
+          <% end %>
+        <% end %>
+        <ul class="comments_lists">
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.content %>
+              <%= link_to "（#{comment.user.nickname}）", user_path(comment.user), class: :comment_user %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
-</div>
+</main>
+<%= render "shared/second-footer" %>
