@@ -64,7 +64,7 @@
       </div>
       <div class="event__comments">
         <% if user_signed_in? %>
-          <%= form_with model: [@event, @comment], local: true do |f| %>
+          <%= form_with model: [@event, @comment], url: event_comments_path(@event), local: true do |f| %>
             <div class="field">
               <%= f.label :content, "コメント" %><br />
               <%= f.text_field :content, id: "comment_content" %>
