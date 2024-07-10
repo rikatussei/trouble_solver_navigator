@@ -8,7 +8,8 @@ class Event < ApplicationRecord
   validates :location, presence: true
   validates :images, presence: true
 
-  belongs_to :user
+  # belongs_to :user
+  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
   # has_many :user_events
   # has_many :users, through: :user_events
   has_many :comments, dependent: :destroy

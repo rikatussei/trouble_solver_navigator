@@ -8,21 +8,17 @@
       <table class="table">
         <tbody>
           <tr>
-            <th class="table__col1">名前</th>
+            <th class="table__col1">お名前(全角)</th>
             <td class="table__col2"><%= @user.nickname %></td>
           </tr>
           <tr>
-            <th class="table__col1">プロフィール</th>
+            <th class="table__col1">所属</th>
             <td class="table__col2"><%= @user.affiliation %></td>
           </tr>
-          <tr>
-            <th class="table__col1">所属</th>
-            <td class="table__col2"><%= @user.occupation %></td>
-          </tr>
-          <tr>
+          <%# <tr>
             <th class="table__col1">役職</th>
             <td class="table__col2"><%= @user.position %></td>
-          </tr>
+          <%# </tr> %>
         </tbody>
       </table>
       <h2 class="page-heading">
