@@ -1,40 +1,46 @@
 /* 詳細ページ */
-.event__wrapper{
+.event__wrapper {
   min-height: calc(100vh - 161px);
 }
-.event__hedding{
+.event__heading {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
-.event__user{
+.event__user {
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
 }
-.event__image{
-  width: 40%;
-  margin: 0 auto;
+.event__images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.event__image {
+  width: 30%;
+  margin: 0 10px;
   padding: 16px 0;
 }
-.event__detail{
+.event__detail {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
 }
-.detail__title{
+.detail__title {
   font-size: 20px;
   font-weight: bold;
 }
-.event__manage{
+.event__manage {
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.event__btn{
+.event__btn {
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -46,27 +52,23 @@
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.event__btn:hover{
+.event__btn:hover {
   color: #fff;
   background: #999;
 }
-
-.event__comments{
+.event__comments {
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
 }
-
-.comments_lists{
+.comments_lists {
   padding-left: 20px;
 }
-
-.comments_list{
+.comments_list {
   list-style-type: square;
   padding-bottom: 5px;
 }
-
-.comment_user{
+.comment_user {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
