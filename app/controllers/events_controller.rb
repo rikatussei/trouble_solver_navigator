@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
-
   def index
-    @events = Event.includes(:user).order('created_at DESC')
+    @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC')
   end
 
   def new
@@ -39,7 +38,6 @@ class EventsController < ApplicationController
     end
   end
 
-
   def destroy
     @event = Event.find(params[:id])
     if @event.destroy
@@ -52,9 +50,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :occurred_on, :location, :cause_type_id, :detailed_cause, :resolution, :images).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :description, :occurred_on, :location, :cause_type_id, :detailed_cause, :resolution, images: []).merge(user_id: current_user.id)
   end
-
 end
-
-
