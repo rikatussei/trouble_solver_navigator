@@ -2,9 +2,7 @@
 <main class="main">
   <div class="inner">
     <div class="event__wrapper">
-      <%# <p class="event__heading">
-        <%= @event.title %>
-      <%# </p> %> 
+      <h2 class="event__heading"><%= @event.title %></h2>
       <%= link_to "投稿者: #{@event.user.nickname}", user_path(@event.user), class: :event__user %>
       <% if current_user == @event.user %>
         <div class="event__manage">
@@ -12,8 +10,12 @@
           <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :event__btn %>
         </div>
       <% end %>
-      <div class="event__image">
-        <%= image_tag @event.images %>
+      <div class="event__images">
+        <% @event.images.each do |image| %>
+          <div class="event__image">
+            <%= image_tag image %>
+          </div>
+        <% end %>
       </div>
       <div class="event__body">
         <div class="event__detail">
