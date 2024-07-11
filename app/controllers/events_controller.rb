@@ -1,3 +1,4 @@
+# app/controllers/events_controller.rb
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
@@ -21,14 +22,20 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find_by(id: params[:id])
+    if @event.nil?
+      redirect_to root_path, alert: 'Event not found.'
+    end
     @comment = Comment.new
     @comments = @event.comments
   end
 
   def edit
+    @event = Event.find(params[:id])
   end
 
   def update
+    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to event_path(@event), notice: 'イベントが更新されました。'
     else
@@ -37,6 +44,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:id])
     if @event.destroy
       redirect_to root_path, notice: 'イベントが削除されました。'
     else
