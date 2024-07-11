@@ -1,6 +1,7 @@
-# app/controllers/events_controller.rb
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC')
@@ -20,20 +21,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by(id: params[:id])
-    if @event.nil?
-      redirect_to root_path, alert: 'Event not found.'
-    end
     @comment = Comment.new
     @comments = @event.comments
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to event_path(@event), notice: 'イベントが更新されました。'
     else
@@ -42,7 +37,6 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
     if @event.destroy
       redirect_to root_path, notice: 'イベントが削除されました。'
     else
@@ -51,6 +45,14 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  def ensure_correct_user
+    redirect_to root_path, alert: 'アクセス権がありません。' unless @event.user == current_user
+  end
 
   def event_params
     params.require(:event).permit(:title, :description, :occurred_on, :location, :cause_type_id, :detailed_cause, :resolution, images: []).merge(user_id: current_user.id)
