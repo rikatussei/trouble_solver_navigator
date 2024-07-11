@@ -1,4 +1,7 @@
+# app/controllers/events_controller.rb
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC')
   end
