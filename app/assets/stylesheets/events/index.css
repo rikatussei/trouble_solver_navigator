@@ -1,70 +1,8 @@
-/* event__indexメイン */
-.main {
-  background: #f8f8f8;
-  overflow: auto;
-}
-
-.inner {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  max-width: 980px;
-  height: 550px;
-  margin: 0 auto;
-}
-
-.greeting-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% center;
-  opacity: 0.8;
-}
-
-.greeting, .greeting__text__main, .greeting__text__sub, .card__wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  color: black;
-  z-index: 2;
-}
-
-.greeting {
-  top: 10%;
-}
-
-.greeting__text__main, .greeting__text__sub {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 30px;
-}
-
-.greeting__text__main {
-  font-size: 50px;
-  margin-bottom: 10px;
-  top: 10%;
-}
-
-.greeting__text__sub {
-  font-size: 30px;
-  top: 20%;
-}
-
-.greeting__link {
-  text-decoration: underline;
-}
-
+/* インデックスページ */
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
+  gap: 20px;
 }
 
 .card {
@@ -74,26 +12,19 @@
 
 .card__img {
   width: 100%;
-  height: 200px; /* 統一された画像サイズ */
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto;
   margin-bottom: 16px;
-}
-
-.card__body {
-  padding: 10px;
 }
 
 .card__title {
   display: block;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
   margin-bottom: 8px;
+  font-weight: bold;
 }
 
 .card__summary {
-  font-size: 14px;
-  color: #666;
+  font-size: 16px;
 }
 
 .card__user {
@@ -104,52 +35,14 @@
   text-decoration: underline;
 }
 
-/* タブレット対応 */
 @media (max-width: 1024px) {
-  .greeting__text__main {
-    font-size: 35px;
-  }
-  .greeting__text__sub {
-    font-size: 25px;
-  }
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .page-heading {
-    font-size: 24px;
-  }
   .card {
-    width: calc((100% - 30px) / 2);
-    margin-bottom: 40px;
+    width: calc((100% - 20px) / 2);
   }
 }
 
-/* スマホ表示 */
 @media (max-width: 599px) {
-  .greeting__text__main {
-    font-size: 28px;
-  }
-  .greeting__text__sub {
-    font-size: 20px;
-  }
-  .logo {
-    width: 120px;
-  }
-  .page-heading {
-    font-size: 20px;
-  }
   .card {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .table {
     width: 100%;
   }
 }
