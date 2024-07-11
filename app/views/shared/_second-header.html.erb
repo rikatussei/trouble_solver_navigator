@@ -1,15 +1,9 @@
-<header>
-  <nav>
-    <ul>
-      <li><%= link_to 'トップページ', root_path %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'イベント投稿', new_event_path %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to current_user.nickname, user_path(current_user) %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
-        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-      <% end %>
-    </ul>
-  </nav>
-</header>
+   <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to image_tag("troublesolver_navigator.png", class: :logo), root_path %>
+          </div>
+        </div>
+      </div>
+    </header>
