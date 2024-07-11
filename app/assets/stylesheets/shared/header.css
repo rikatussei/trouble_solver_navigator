@@ -20,7 +20,7 @@
   width: 200px;
 }
 
-.nav__btn{
+.nav__btn, .nav__logout {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -33,25 +33,7 @@
   transition: 0.4s ease;
 }
 
-.nav__btn:hover{
+.nav__btn:hover, .nav__logout:hover {
   color: #fff;
   background: #87CEFA;
 }
-
-.nav__logout{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #59b7a1;
-  background-color: #eef3f3;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #87CEFA solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-
-.nav__logout:hover{
-  opacity: 0.5;
-}
-
