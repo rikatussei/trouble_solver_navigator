@@ -1,21 +1,19 @@
-<%= render "shared/second-header" %>
+<%= render "shared/header" %>
 <main class="main">
   <div class="inner">
-    <div class="image-container">
-      <% if user_signed_in? %>
-        <div class="greeting">
-          こんにちは、
-          <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link %>
-        </div>
-        <div class="card__wrapper">
-          <%= render partial: 'events/event', collection: @events %>
-        </div>
-      <% else %>
-        <%= image_tag 'application_image.jpeg', class: 'greeting-image' %>
-        <div class="greeting__text__main">ようこそTroubleSolver Navigatorへ!</div>
-        <div class="greeting__text__sub">あなたのイベントの記録・解決をサポートします！</div>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link %>
+      </div>
+      <div class="card__wrapper">
+        <%= render partial: 'events/event', collection: @events %>
+      </div>
+    <% else %>
+      <%= image_tag 'application_image.jpeg', class: 'greeting-image' %>
+      <div class="greeting__text__main">ようこそTroubleSolver Navigatorへ!</div>
+      <div class="greeting__text__sub">あなたのイベントの記録・解決をサポートします！</div>
+    <% end %>
   </div>
 </main>
-<%= render "shared/second-footer" %>
+<%= render "shared/footer" %>
