@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC')
@@ -50,8 +50,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def ensure_correct_user
-    redirect_to root_path, alert: 'アクセス権がありません。' unless @event.user == current_user
+  def authorize_user!
+    redirect_to root_path, alert: '不正なアクセスです。' unless @event.user == current_user
   end
 
   def event_params
