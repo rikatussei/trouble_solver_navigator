@@ -1,12 +1,8 @@
 # app/controllers/events_controller.rb
 class EventsController < ApplicationController
-<<<<<<< HEAD
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
-=======
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
->>>>>>> parent of b29f994 (eventコントローラーとルーティングの記述を変更)
 
   def index
     @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC')
@@ -58,7 +54,6 @@ class EventsController < ApplicationController
 
   private
 
-<<<<<<< HEAD
   def set_event
     @event = Event.find(params[:id])
   end
@@ -67,8 +62,6 @@ class EventsController < ApplicationController
     redirect_to root_path, alert: '不正なアクセスです。' unless @event.user == current_user
   end
 
-=======
->>>>>>> parent of b29f994 (eventコントローラーとルーティングの記述を変更)
   def event_params
     params.require(:event).permit(:title, :description, :occurred_on, :location, :cause_type_id, :detailed_cause, :resolution, images: []).merge(user_id: current_user.id)
   end
