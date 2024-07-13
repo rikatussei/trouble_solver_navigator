@@ -3,7 +3,7 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">発生したトラブル「イベント」の情報を入力して下さい。</h2>
-    <%= form_with model: @event, url:events_path ,local: true do |f| %>
+    <%= form_with model: @event, url: events_path, local: true, id: "new_event" do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -72,7 +72,7 @@
 
     <div class="sell-btn-contents">
       <%= f.submit "イベントを投稿する" ,class:"sell-btn" %>
-      <%=link_to 'トップページに戻る', root_path, class:"nav-back-btn2" %>
+      <%= link_to 'トップページに戻る', root_path, class:"nav-back-btn2" %>
     </div>
   </div>
   <% end %>
