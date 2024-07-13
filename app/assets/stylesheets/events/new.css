@@ -248,3 +248,11 @@
 .inc {
   font-size: 13px;
 }
+
+/* プレビュー画像のサイズを一定にするCSS */
+.preview-image {
+  max-width: 200px; /* 画像の最大幅を200pxに設定 */
+  max-height: 200px; /* 画像の最大高さを200pxに設定 */
+  object-fit: cover; /* 画像を切り取ってフィットさせる */
+  margin-top: 10px; /* プレビュー画像と他の要素との間に余白を追加 */
+}
