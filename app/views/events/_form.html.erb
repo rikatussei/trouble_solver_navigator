@@ -1,4 +1,4 @@
-<%= form_with model: event, local: true do |f| %>
+<%= form_with model: event, local: true, id: event.new_record? ? 'new_event' : 'edit_event' do |f| %>
   <div class="img-upload">
     <div class="weight-bold-text">
       状況を説明する画像
@@ -9,7 +9,7 @@
         クリックしてファイルをアップロード
       </p>
       <div id="previews"></div> <!-- プレビュー表示用のdivを追加 -->
-      <%= f.file_field :images, id:"item-image" %>
+      <%= f.file_field :images, multiple: true, name: 'event[images][]', id: "item-image" %>
     </div>
   </div>
 
@@ -18,13 +18,13 @@
       タイトル
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"イベントの名称", maxlength:"40" %>
+    <%= f.text_area :title, class: "items-text", id: "item-name", placeholder: "イベントの名称", maxlength: "40" %>
     <div class="items-explain">
       <div class="weight-bold-text">
         イベントの説明
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :description, class:"items-text", id:"item-info", placeholder:"何が起きましたか？", rows:"7", maxlength:"1000" %>
+      <%= f.text_area :description, class: "items-text", id: "item-info", placeholder: "何が起きましたか？", rows: "7", maxlength: "1000" %>
     </div>
   </div>
 
@@ -39,7 +39,7 @@
         イベントの発生した場所
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :location, class:"items-text", id:"item-info", placeholder:"どこで発生したイベントですか？", rows:"7", maxlength:"1000" %>
+      <%= f.text_area :location, class: "items-text", id: "item-info", placeholder: "どこで発生したイベントですか？", rows: "7", maxlength: "1000" %>
     </div>
   </div>
 
@@ -49,20 +49,20 @@
         イベントの種類や原因
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:cause_type_id, CauseType.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+      <%= f.collection_select :cause_type_id, CauseType.all, :id, :name, {}, { class: "select-box", id: "item-shipping-fee-status" } %>
       <div class="weight-bold-text">
         イベントについて具体的に説明してください
         <span class="indispensable">任意</span>
       </div>
-      <%= f.text_area :detailed_cause, class:"items-text", id:"item-info", placeholder:"イベントについて具体的な説明をお願いします。", rows:"7", maxlength:"1000" %>
+      <%= f.text_area :detailed_cause, class: "items-text", id: "item-info", placeholder: "イベントについて具体的な説明をお願いします。", rows: "7", maxlength: "1000" %>
       <div class="weight-bold-text">
         どのような対応をしましたか？
         <span class="indispensable2">任意</span>
       </div>
-      <%= f.text_area :resolution, class:"items-text", id:"item-info", placeholder:"イベントに対してどのような行動をしましたか？", rows:"7", maxlength:"1000" %>
+      <%= f.text_area :resolution, class: "items-text", id: "item-info", placeholder: "イベントに対してどのような行動をしましたか？", rows: "7", maxlength: "1000" %>
     </div>
   </div>
-  
+
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn %>
   </div>
