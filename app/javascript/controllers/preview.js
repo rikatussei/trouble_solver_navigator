@@ -1,7 +1,6 @@
-// app/javascript/controllers/preview.js
-document.addEventListener('turbo:load', function() {
+document.addEventListener('turbo:load', function(){
   // 新規投稿・編集ページのフォームを取得
-  const eventForm = document.getElementById('new_event');
+  const eventForm = document.getElementById('new_event') || document.getElementById('edit_event');
 
   // プレビューを表示するためのスペースを取得
   const previewList = document.getElementById('previews');
@@ -11,10 +10,9 @@ document.addEventListener('turbo:load', function() {
   console.log("preview.jsが読み込まれました");
 
   // input要素を取得
-  const fileField = document.querySelector('input[type="file"][name="event[images]"]');
-  
+  const fileField = document.querySelector('input[type="file"][name="event[images][]"]');
   // input要素で値の変化が起きた際に呼び出される関数
-  fileField.addEventListener('change', function(e) {
+  fileField.addEventListener('change', function(e){
     // 古いプレビューが存在する場合は削除
     const alreadyPreview = document.querySelector('.preview');
     if (alreadyPreview) {
