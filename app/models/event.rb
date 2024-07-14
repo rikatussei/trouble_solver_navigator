@@ -6,11 +6,13 @@ class Event < ApplicationRecord
     message: 'must be between January 1, 1950 and December 31, 2200'
   }
   validates :cause_type_id, numericality: { other_than: 1, message: "can't be blank"}
+  validates :images, presence: true
 
   # アソシエーション
   belongs_to :user, class_name: 'User', foreign_key: 'user_id'
   has_many :comments, dependent: :destroy
   has_many_attached :images
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :cause_type
