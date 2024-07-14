@@ -1,6 +1,6 @@
 document.addEventListener('turbo:load', function(){
   // 新規投稿・編集ページのフォームを取得
-  const postForm = document.getElementById('new_event');
+  const postForm = document.getElementById('new_post');
   // プレビューを表示するためのスペースを取得
   const previewList = document.getElementById('previews');
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
@@ -10,14 +10,14 @@ document.addEventListener('turbo:load', function(){
   const imageLimits = 5;
 
   // プレビュー画像を生成・表示する関数
-  const buildPreviewImage = (dataIndex, blob) => {
+  const buildPreviewImage = (dataIndex, blob) =>{
     // 画像を表示するためのdiv要素を生成
     const previewWrapper = document.createElement('div');
     previewWrapper.setAttribute('class', 'preview');
     previewWrapper.setAttribute('data-index', dataIndex);
 
     // 表示する画像を生成
-    const previewImage = document.createElement('img');
+    const previewImage= document.createElement('img');
     previewImage.setAttribute('class', 'preview-image');
     previewImage.setAttribute('src', blob);
 
@@ -45,7 +45,7 @@ document.addEventListener('turbo:load', function(){
     // 最後のfile_fieldを取得
     const lastFileField = document.querySelector('input[type="file"][name="event[images][]"]:last-child');
     // nextDataIndex = 最後のfile_fieldのdata-index + 1
-    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) + 1;
+    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) +1;
     newFileField.setAttribute('data-index', nextDataIndex);
 
     // 追加されたfile_fieldにchangeイベントをセット
