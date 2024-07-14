@@ -1,6 +1,6 @@
 document.addEventListener('turbo:load', function(){
   // 新規投稿・編集ページのフォームを取得
-  const postForm = document.getElementById('new_post');
+  const postForm = document.getElementById('new_event') || document.getElementById('edit_event');
   // プレビューを表示するためのスペースを取得
   const previewList = document.getElementById('previews');
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。

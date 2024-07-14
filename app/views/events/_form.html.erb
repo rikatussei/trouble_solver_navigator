@@ -9,7 +9,7 @@
         クリックしてファイルをアップロード
       </p>
       <div id="previews"></div> <!-- プレビュー表示用のdivを追加 -->
-      <%= f.file_field :images, multiple: true, name: 'event[images][]', id: "item-image" %>
+      <%= f.file_field :images, multiple: true, name: 'event[images][]', id: "item-image", data: { index: 0 } %>
     </div>
   </div>
 
