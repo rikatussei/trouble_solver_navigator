@@ -11,7 +11,7 @@
       <div class="event__image">
         <%= image_tag @event.images[0], class: "event__img" %>
         <div class="other-images">
-          <% @event.images[1..-1].each do |image| %>
+          <% @event.images[1..4].each do |image| %> <!-- 2枚目から5枚目の画像を表示 -->
             <div class="other-image">
               <%= image_tag image %>
             </div>
