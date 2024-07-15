@@ -122,13 +122,8 @@
 .image-thumbnail {
   max-width: 150px; /* サムネイルの幅を150pxに設定 */
   max-height: 150px; /* サムネイルの高さを150pxに設定 */
-  border: 1px solid #ccc; /* 枠線を追加 */
-  border-radius: 8px; /* 角を丸くする */
   object-fit: cover; /* 画像を切り取ってフィットさせる */
-}
-
-.image-delete-button {
-  text-align: center;
-  border: solid 1px;
-  cursor: pointer;
+  cursor: pointer; /* クリック可能に */
+  border: 1px solid #ccc; /* 枠線を追加 */
+  border-radius: 5px; /* 角を丸くする */
 }
