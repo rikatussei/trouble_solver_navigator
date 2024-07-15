@@ -9,11 +9,11 @@
         </div>
       <% end %>
       <div class="event__image">
-        <%= image_tag @event.images[0], class: "event__img main-image" if @event.images.attached? %>
-        <div class="other-images">
-          <% @event.images[1..5].each do |image| %>
+        <%= image_tag @event.images[0], class: "event__img main-image", id: "main-event-image" if @event.images.attached? %>
+        <div class="other-images" data-controller="image-switcher">
+          <% @event.images[1..5].each_with_index do |image, index| %>
             <div class="other-image">
-              <%= image_tag image, class: "image-thumbnail" %>
+              <%= image_tag image, class: "image-thumbnail", data: { action: "click->image-switcher#switch", target: "image-switcher.image", index: index + 1 } %>
             </div>
           <% end %>
         </div>
