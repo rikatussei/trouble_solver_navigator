@@ -18,9 +18,10 @@
 }
 
 .event__image {
-  width: 40%;
+  width: 100%;
   margin: 0 auto;
   padding: 16px 0;
+  text-align: center; /* 画像を中央揃えに */
 }
 
 .event__img {
@@ -111,27 +112,23 @@
 .other-images {
   display: flex;
   flex-wrap: wrap; /* 画像を複数行に折り返す */
+  justify-content: center; /* 画像を中央に配置 */
 }
 
 .other-image {
-  margin-right: 10px;
+  margin: 10px; /* 画像間に余白を追加 */
+}
+
+.image-thumbnail {
+  max-width: 150px; /* サムネイルの幅を150pxに設定 */
+  max-height: 150px; /* サムネイルの高さを150pxに設定 */
+  border: 1px solid #ccc; /* 枠線を追加 */
+  border-radius: 8px; /* 角を丸くする */
+  object-fit: cover; /* 画像を切り取ってフィットさせる */
 }
 
 .image-delete-button {
   text-align: center;
   border: solid 1px;
   cursor: pointer;
-}
-
-.main-image {
-  height: 200px;
-  width: 200px;
-}
-
-/* プレビュー画像のサイズを一定にするCSS */
-.preview-image {
-  max-width: 200px; /* 画像の最大幅を200pxに設定 */
-  max-height: 200px; /* 画像の最大高さを200pxに設定 */
-  object-fit: cover; /* 画像を切り取ってフィットさせる */
-  margin-top: 10px; /* プレビュー画像と他の要素との間に余白を追加 */
 }

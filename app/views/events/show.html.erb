@@ -9,11 +9,11 @@
         </div>
       <% end %>
       <div class="event__image">
-        <%= image_tag @event.images[0], class: "event__img" %>
+        <%= image_tag @event.images[0], class: "event__img main-image" if @event.images.attached? %>
         <div class="other-images">
           <% @event.images[1..5].each do |image| %>
             <div class="other-image">
-              <%= image_tag image %>
+              <%= image_tag image, class: "image-thumbnail" %>
             </div>
           <% end %>
         </div>

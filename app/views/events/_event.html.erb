@@ -1,6 +1,6 @@
 <div class="card">
   <% event.images.first(3).each do |image| %>
-    <%= link_to image_tag(image, class: :card__img), event_path(event) %>
+    <%= link_to image_tag(image, class: "card__img"), event_path(event) %>
   <% end %>
   <div class="card__body">
     <%= link_to "イベント名: #{event.title}", event_path(event), class: :card__title %>
