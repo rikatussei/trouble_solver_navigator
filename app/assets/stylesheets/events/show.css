@@ -1,4 +1,3 @@
-/* 詳細ページ */
 .event__wrapper {
   min-height: calc(100vh - 161px);
 }
@@ -21,7 +20,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 16px 0;
-  text-align: center; /* 画像を中央揃えに */
+  text-align: center;
 }
 
 .event__img {
@@ -34,10 +33,10 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
-  border: 1px solid #ccc; /* 枠線を追加 */
-  padding: 16px; /* 内側の余白を追加 */
-  border-radius: 8px; /* 角を丸くする */
-  background-color: #f9f9f9; /* 背景色を追加 */
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .detail__title {
@@ -111,19 +110,27 @@
 
 .other-images {
   display: flex;
-  flex-wrap: wrap; /* 画像を複数行に折り返す */
-  justify-content: center; /* 画像を中央に配置 */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .other-image {
-  margin: 10px; /* 画像間に余白を追加 */
+  margin: 10px;
 }
 
 .image-thumbnail {
-  max-width: 150px; /* サムネイルの幅を150pxに設定 */
-  max-height: 150px; /* サムネイルの高さを150pxに設定 */
-  object-fit: cover; /* 画像を切り取ってフィットさせる */
-  cursor: pointer; /* クリック可能に */
-  border: 1px solid #ccc; /* 枠線を追加 */
-  border-radius: 5px; /* 角を丸くする */
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: 400px;
 }

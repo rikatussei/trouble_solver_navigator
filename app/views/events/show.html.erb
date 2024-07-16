@@ -8,16 +8,18 @@
           <%= link_to "削除する", event_path(@event), data: { turbo_method: :delete }, class: :event__btn %>
         </div>
       <% end %>
-      <div class="event__image" data-controller="image-switcher">
-        <%= image_tag @event.images[0], class: "event__img main-image", id: "main-event-image" if @event.images.attached? %>
-        <div class="other-images">
-          <% @event.images[1..4].each_with_index do |image, index| %>
-            <div class="other-image">
-              <%= image_tag image, class: "image-thumbnail", data: { action: "click->image-switcher#switch", image_switcher_target: "image", index: index } %>
-            </div>
-          <% end %>
+      <% if @event.images.attached? %>
+        <div class="event__image" data-controller="image-switcher">
+          <%= image_tag @event.images[0], class: "event__img main-image", id: "main-event-image" %>
+          <div class="other-images">
+            <% @event.images.each_with_index do |image, index| %>
+              <div class="other-image">
+                <%= image_tag image, class: "image-thumbnail", data: { action: "click->image-switcher#switch", image_switcher_target: "image", index: index } %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
       <div class="event__body">
         <div class="event__detail">
           <p class="detail__message">
