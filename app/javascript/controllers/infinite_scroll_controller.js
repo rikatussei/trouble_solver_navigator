@@ -1,39 +1,41 @@
 import { Controller } from "@hotwired/stimulus"
-import { useIntersection } from "stimulus-use"
 
-// Connects to data-controller="infinite-scroll"
 export default class extends Controller {
   static values = {
     url: String
   }
 
   connect() {
-    console.log("InfiniteScroll controller connected")
-    useIntersection(this, { element: this.element, threshold: 1.0 })
-  }
-
-  appear(entry) {
-    if (entry.isIntersecting) {
-      this.loadMore()
-    }
+    this.loadMore()
   }
 
   loadMore() {
-    fetch(this.urlValue, {
-      headers: {
-        Accept: "application/json"
-      }
-    }).then(response => response.text())
-      .then(html => {
-        this.element.insertAdjacentHTML("beforeend", html)
-        this.urlValue = this.nextPageUrl()
+    if (this.loading || this.endOfResults) return
+
+    this.loading = true
+
+    fetch(this.urlValue)
+      .then(response => response.json())
+      .then(data => {
+        if (data.length === 0) {
+          this.endOfResults = true
+        } else {
+          this.element.insertAdjacentHTML('beforeend', data.map(event => this.renderEvent(event)).join(''))
+          this.loading = false
+        }
       })
   }
 
-  nextPageUrl() {
-    const url = new URL(this.urlValue)
-    const page = parseInt(url.searchParams.get("page") || "1") + 1
-    url.searchParams.set("page", page)
-    return url.toString()
+  renderEvent(event) {
+    return `
+      <div class="card">
+        ${event.images.slice(0, 5).map(image => `<img src="${image}" class="card__img" />`).join('')}
+        <div class="card__body">
+          <a href="/events/${event.id}" class="card__title">イベント名: ${event.title}</a>
+          <p class="card__summary">説明 ${event.description}</p>
+          <a href="/users/${event.user.id}" class="card__user">投稿者 ${event.user.nickname}</a>
+        </div>
+      </div>
+    `
   }
 }

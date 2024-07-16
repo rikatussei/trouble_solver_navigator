@@ -165,6 +165,7 @@ GEM
     nokogiri (1.16.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (8.6.3)
     pg (1.5.6)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -297,6 +298,7 @@ DEPENDENCIES
   jbuilder
   mini_magick
   mysql2 (~> 0.5)
+  pagy
   pg
   pry-rails
   puma (~> 5.0)

@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
+  include Pagy::Backend
+
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC').page(params[:page]).per(9)
+    @pagy, @events = pagy(Event.includes(:user, images_attachments: :blob).order('created_at DESC'))
     respond_to do |format|
       format.html
       format.json { render partial: 'events/event', collection: @events }
