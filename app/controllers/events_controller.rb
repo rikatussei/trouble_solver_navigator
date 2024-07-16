@@ -1,4 +1,3 @@
-# app/controllers/events_controller.rb
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
@@ -63,6 +62,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :occurred_on, :location, :cause_type_id, :detailed_cause, :resolution, {images: []}).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :description, :occurred_on, :location, :cause_type_id, :detailed_cause, :resolution, { images: [] }).merge(user_id: current_user.id)
   end
 end
