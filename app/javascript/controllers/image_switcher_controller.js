@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="image-switcher"
 export default class extends Controller {
-  static targets = ["image"];
+  static targets = ["image"]
 
   connect() {
     console.log("ImageSwitcher controller connected");
