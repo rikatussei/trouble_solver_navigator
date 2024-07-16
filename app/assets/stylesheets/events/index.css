@@ -1,7 +1,19 @@
+/* event__indexメイン */
+.main {
+  background: #f8f8f8;
+  overflow: auto;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .image-container {
   position: relative;
   width: 100%;
   max-width: 980px;
+  height: 550px;
   margin: 0 auto;
 }
 
@@ -13,7 +25,7 @@
   opacity: 0.8;
 }
 
-.greeting, .greeting__text__main, .greeting__text__sub {
+.greeting, .greeting__text__main, .greeting__text__sub, .card__wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,6 +48,7 @@
 .greeting__text__main {
   font-size: 50px;
   margin-bottom: 10px;
+  top: 10%;
 }
 
 .greeting__text__sub {
@@ -52,6 +65,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
+  position: relative;
+  top: 25%; /* greeting の下に表示 */
 }
 
 .card {
@@ -61,7 +76,7 @@
 
 .card__img {
   width: 100%;
-  height: 200px;
+  height: 200px; /* 統一された画像サイズ */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 16px;
