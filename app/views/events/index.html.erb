@@ -13,7 +13,7 @@
         <div class="greeting__text__sub">あなたのイベントの記録・解決をサポートします！</div>
       <% end %>
     </div>
-    <div class="card__wrapper">
+    <div class="card__wrapper" data-controller="infinite-scroll" data-infinite-scroll-url-value="<%= events_path(page: 2) %>">
       <%= render partial: 'events/event', collection: @events %>
     </div>
   </div>

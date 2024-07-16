@@ -2,3 +2,12 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "./controllers/preview" // 相対パスを指定してインポート
+
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+import InfiniteScrollController from "./controllers/infinite_scroll_controller"
+
+const application = Application.start()
+const context = require.context("./controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))
+application.register("infinite-scroll", InfiniteScrollController)

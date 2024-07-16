@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC')
+    @events = Event.includes(:user, images_attachments: :blob).order('created_at DESC').page(params[:page]).per(9)
+    respond_to do |format|
+      format.html
+      format.json { render partial: 'events/event', collection: @events }
+    end
   end
 
   def new

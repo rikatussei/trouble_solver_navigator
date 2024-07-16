@@ -25,7 +25,7 @@
   opacity: 0.8;
 }
 
-.greeting, .greeting__text__main, .greeting__text__sub, .card__wrapper {
+.greeting, .greeting__text__main, .greeting__text__sub {
   position: absolute;
   top: 50%;
   left: 50%;
