@@ -8,10 +8,15 @@ export default class extends Controller {
     console.log("ImageSwitcher controller connected");
   }
 
+  // サムネイル画像をクリックした際にメイン画像を変更するメソッド
   switch(event) {
+    // クリックされたサムネイルのデータインデックスを取得
     const index = event.target.dataset.index;
+    // メイン画像の要素を取得
     const mainImage = document.getElementById("main-event-image");
-    const newSrc = this.imageTargets[index].src;
-    mainImage.src = newSrc;
+    // クリックされたサムネイルの画像URLを取得
+    const thumbnailSrc = this.imageTargets[index].src;
+    // メイン画像のURLをサムネイルのURLに変更
+    mainImage.src = thumbnailSrc;
   }
 }
