@@ -7,14 +7,16 @@
           こんにちは、
           <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link %>
         </div>
+        <div class="card__wrapper" data-controller="infinite-scroll" data-infinite-scroll-url-value="<%= events_path(page: 2) %>">
+          <%= render partial: 'events/event', collection: @events %>
+        </div>
       <% else %>
-        <%= image_tag 'application_image.jpeg', class: 'greeting-image' %>
-        <div class="greeting__text__main">ようこそTroubleSolver Navigatorへ!</div>
-        <div class="greeting__text__sub">あなたのイベントの記録・解決をサポートします！</div>
+        <div class="greeting-container">
+          <%= image_tag 'application_image.jpeg', class: 'greeting-image' %>
+          <div class="greeting__text__main">ようこそTroubleSolver Navigatorへ!</div>
+          <div class="greeting__text__sub">あなたのイベントの記録・解決をサポートします！</div>
+        </div>
       <% end %>
-    </div>
-    <div class="card__wrapper" data-controller="infinite-scroll" data-infinite-scroll-url-value="<%= events_path(page: 2) %>">
-      <%= render partial: 'events/event', collection: @events %>
     </div>
   </div>
 </main>
