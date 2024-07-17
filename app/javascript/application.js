@@ -1,3 +1,4 @@
+// app/javascript/application.js
 import Rails from "@rails/ujs";
 import { Application } from "@hotwired/stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
