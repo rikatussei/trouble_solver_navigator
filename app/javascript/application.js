@@ -1,6 +1,6 @@
 // app/javascript/application.js
 import { Application } from "@hotwired/stimulus";
-import { definitionsFromContext } from "@hotwired/stimulus-webpack-helpers";
+import { definitionsFromContext } from "@hotwired/stimulus-loading";
 import "@hotwired/turbo-rails";
 import "controllers";
 import "./controllers/preview";
