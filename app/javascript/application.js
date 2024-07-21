@@ -3,6 +3,7 @@ import { Application } from "@hotwired/stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
 import "@hotwired/turbo-rails";
 import "controllers";
+import "preview"
 import "./controllers/preview";
 import InfiniteScrollController from "./controllers/infinite_scroll_controller";
 
