@@ -17,7 +17,7 @@ document.addEventListener('turbo:load', function(){
     previewWrapper.setAttribute('data-index', dataIndex);
 
     // 表示する画像を生成
-    const previewImage= document.createElement('img');
+    const previewImage = document.createElement('img');
     previewImage.setAttribute('class', 'preview-image');
     previewImage.setAttribute('src', blob);
 
@@ -45,7 +45,7 @@ document.addEventListener('turbo:load', function(){
     // 最後のfile_fieldを取得
     const lastFileField = document.querySelector('input[type="file"][name="event[images][]"]:last-child');
     // nextDataIndex = 最後のfile_fieldのdata-index + 1
-    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) +1;
+    const nextDataIndex = Number(lastFileField.getAttribute('data-index')) + 1;
     newFileField.setAttribute('data-index', nextDataIndex);
 
     // 追加されたfile_fieldにchangeイベントをセット
