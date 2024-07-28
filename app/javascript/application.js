@@ -1,9 +1,9 @@
-import Rails from "@rails/ujs";
+import Rails from "@rails/ujs";  // これが問題の行です
 import { Application } from "@hotwired/stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
 import "@hotwired/turbo-rails";
 import "controllers";
-import "preview"
+import "preview";
 import "./controllers/preview";
 import InfiniteScrollController from "./controllers/infinite_scroll_controller";
 
