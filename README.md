@@ -1,5 +1,50 @@
 # README
 
+アプリ名：
+trouble_solver_navigator「トラブル解決ナビゲーター」
+
+概要：
+トラブル解決をナビゲートするアプリケーションです。発生した問題を記録・分析し、再発防止策の立案をサポートする機能を提供します。
+
+目的：
+トラブル対応に取り組む人々を支援
+システム的な問題解決アプローチの提供
+再発防止策の考えと実施をサポート
+
+使用技術：
+ルビー 3.2.0
+Ruby on Rails 7.0.8
+
+データベース：
+開発環境：MySQL
+本環境：PostgreSQL
+
+その他の主要なGem：
+考案（認証機能）
+rspec-rails（テスト）
+mini_magick（画像処理）
+active_hash（マスターデータ管理）
+pagy（ページネーション）
+
+
+セットアップ手順
+
+リポジトリのクローン：
+
+git clone https://github.com/rikatussei/trouble_solver_navigator.git
+cd trouble_solver_navigator
+
+依存関係のインストール：
+bundle install
+
+データベースの作成と初期化：
+rails db:create
+rails db:migrate
+
+起動：
+rails server
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
