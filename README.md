@@ -20,12 +20,14 @@ Ruby on Rails 7.0.8
 本環境：PostgreSQL
 
 その他の主要なGem：
-考案（認証機能）
+device「ログイン機能」
 rspec-rails（テスト）
 mini_magick（画像処理）
 active_hash（マスターデータ管理）
 pagy（ページネーション）
 
+その他
+Basic認証
 
 セットアップ手順
 
@@ -152,3 +154,8 @@ belongs_to :event
 ### Association
 - belongs_to :user 
 - belongs_to :event
+
+※技術的な課題
+⒈device導入後に開発をしている過程でログアウト不能になる。ただし、セッション切れになるとログアウトされる。
+⒉プレビュー機能の実装後の開発過程でなぜかプレビューが使用不可になる。
+
